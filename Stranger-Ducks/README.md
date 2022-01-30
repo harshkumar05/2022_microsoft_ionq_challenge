@@ -21,16 +21,17 @@ This game was implemented using python programming language and quantum support 
 - Python 3
 
 ### Steps
-
-- 1.- Run conda in your shell with conda init
-- 2.- Run the following commands:
+<ol>
+  <li>Run conda in your shell with conda init</li>
+  <li>Run the following commands:</li>
   > conda create -n qsharp-env -c microsoft qsharp notebook
   > conda activate qsharp-env
-- 3.- Clone this repo
-- 4.- In the terminal navigate to the repo folder
-- 5.- Run the following command: pip install -r requirements.txt
-- 6.- Run the game with the command: python Duck_runner.py
-
+  <li>Clone this repo</li>
+  <li>In the terminal navigate to the repo folder</li>
+  <li>Run the following command:</li>
+  >pip install -r requirements.txt
+  <li>Run the game with the command: python Duck_runner.py</li>
+</ol>
 # How to play
 
 Now you are familiar with the storyline of the game and might be inserted to play the game and win it then let's get you some instruction. 
