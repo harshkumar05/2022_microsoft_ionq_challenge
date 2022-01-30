@@ -29,7 +29,7 @@ This game was implemented using python programming language and quantum support 
   <li>Clone this repo</li>
   <li>In the terminal navigate to the repo folder</li>
   <li>Run the following command:</li>
-  >pip install -r requirements.txt
+  > pip install -r requirements.txt
   <li>Run the game with the command: python Duck_runner.py</li>
 </ol>
 # How to play
