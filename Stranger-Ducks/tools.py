@@ -10,7 +10,7 @@ RED     = (   255,  0,    0)
 
 #Text render method
 def message_to_screen(screen,msg,color,position,size):
-    font = pg.font.SysFont(None, size)
+    font = pg.font.Font('ZenKurenaido-Regular.ttf', size)
     text = font.render(msg,True,color)
     screen.blit(text,position)
 
