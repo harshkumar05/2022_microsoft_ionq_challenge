@@ -6,12 +6,15 @@ import time
 from resources_full import *
 from tools import *
 from Qtools import *
+import matplotlib.pyplot as plt
 
 pg.init()
 
 qc = QuantumCircuit(1)
 SCREEN_WIDTH = 1200
 SCREEN_HEIGHT = 600
+SCORE = 0
+direction = 0
 speed = 4
 status = 0    #0 = Alive | 1 = Death | 2 = Superposition
 height = (SCREEN_HEIGHT // 2)
@@ -273,7 +276,7 @@ class Game(object):
         bg = (0, SCREEN_HEIGHT//2 - 15)
         bg1 = (ground_w.size[0], SCREEN_HEIGHT//2 - 15)
         player_sprite = player_w
-        player = player_sprite if type(player_sprite) != cycle else next(player_sprite)
+        player = player_sprite
         
         #Floor
         screen.blit(pg.image.fromstring(ground_w.tobytes(), ground_w.size, 'RGBA'), bg)
@@ -324,7 +327,7 @@ class Game(object):
         bg = (0, SCREEN_HEIGHT//2 + 5)
         bg1 = (ground_w.size[0], SCREEN_HEIGHT//2 + 5)
         player_sprite = player_b
-        player = player_sprite if type(player_sprite) != cycle else next(player_sprite)
+        player = player_sprite
         
         #Floor
         screen.blit(pg.image.fromstring(ground_b.tobytes(), ground_b.size, 'RGBA'), bg)
@@ -368,6 +371,30 @@ class Game(object):
             self.start = items.display_item()
         else:
             player_sprite = player_b
+
+    def quantum_effects(self, gate):
+        global status, FPS, direction, SCORE
+        ygate = False
+        self.old_status = status
+        if gate == "notgatebit_w" or gate == "notgatebit_b":
+            if status == 0: status = 1
+            else: status = 0
+            
+        if gate == "ygatebit_w" or gate == "ygatebit_b":
+            if not ygate: 
+                FPS = FPS//2
+                ygate = not ygate
+            else:
+                FPS = FPS * 2
+        if gate == "zgatebit_w" or gate == "zgatebit_b":
+            if direction == 0: direction = 1
+            else: direction = 0
+        if gate == "hgatebit_w" or gate == "hgatebit_b":
+            if status == 2: status = self.old_status
+            else: status = 2
+
+        if gate == "qubit_w_s" or gate == "qubit_w_l":
+            SCORE += 1
 
 
 
@@ -466,6 +493,8 @@ class Menu():
             pg.display.flip()
             clock.tick(FPS)
             
+        if SCORE == 8: self.win()
+        elif SCORE <0: self.game_over()
 
     def howtoplay(self):
         done = False
@@ -486,24 +515,6 @@ class Menu():
             pg.display.flip()
 
     def options(self):
-        done = False
-
-        button_list = []
-        
-        button_list.append(self.back_btn)
-
-        while not done:
-            done = self.process_events(button_list) #or back_btn_Pressed()
-
-            #Display elements
-            self.screen.fill(BLACK)
-            #self.screen.blit(credits_bg,(0,0))
-            for button in button_list:
-                button.draw(self.screen)
-
-            pg.display.flip()
-
-    def credits(self):
         done = False
 
         button_list = []
