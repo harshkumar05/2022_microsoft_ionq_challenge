@@ -3,7 +3,7 @@ iQuHack 2022 project
 **Who we are**
 
 Hello Quack Quack !!!
-Its StrangeDucks 
+Its Stranger-Ducks 
 
 So, hackers, you must have been working for a long session do you get tired exhausted but don't wanna give up your as valuable as gold time. How about a game made by co-hacker 
 
