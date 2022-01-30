@@ -25,6 +25,7 @@ This game was implemented using python programming language and quantum support 
 1. Run conda in your shell with conda init
 2. Run the following commands:
   > conda create -n qsharp-env -c microsoft qsharp notebook
+  
   > conda activate qsharp-env
 3. Clone this repo
 4. In the terminal navigate to the repo folder
