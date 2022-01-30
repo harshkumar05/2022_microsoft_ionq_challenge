@@ -29,3 +29,6 @@ Your goal is to get a score equal to or greater than the target score as soon as
 **Future Scopes and Development** 
 
 Games always trigger curiosity our main goal is to make is the educational purpose for teaching quantum computing currently it is the light version in the upcoming version we ll make it a 3D game and build with Unity and unreal engine also will be adding Gennie who ask complex or tricky not hard questions in form of puzzles and phrase related to quantum computing and also ask them to implement and solve a circuit-related problem we will be using quantum machine learning for the implementation and have a different level and multiple universes(practice, circuit, theory & others )if you solve 3 wrong in a row you will be sent to these universes and there you have to learn and get trained form your master of the particular universe  and do the task allotted by them and collect points  in order to playback again 
+
+
+Link to the presntation https://docs.google.com/presentation/d/1K1JYQFGazk5Lh2mEEolEaaV6UuDZpSdIQAoTAkZngxY/edit?usp=sharing
