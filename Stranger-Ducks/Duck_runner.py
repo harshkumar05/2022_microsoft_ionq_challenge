@@ -450,19 +450,19 @@ class Menu():
         done = False
         game = Game()
         obstacles = ObstacleManager()
-        #items = ItemManager()
+        items = ItemManager()
 
         while not done:
             done = game.process_events()
             self.screen.fill(WHITE, (0, 0, SCREEN_WIDTH, SCREEN_HEIGHT//2))
             self.screen.fill(BLACK, (0, SCREEN_HEIGHT//2, SCREEN_WIDTH, SCREEN_HEIGHT//2))
             if status == 0:
-                game.display_alive_state(self.screen, obstacles)
+                game.display_alive_state(self.screen, obstacles, items)
             elif status == 1:
-                game.display_death_state(self.screen, obstacles)
+                game.display_death_state(self.screen, obstacles, items)
             elif status == 2:
-                game.display_alive_state(self.screen, obstacles)
-                game.display_death_state(self.screen, obstacles)
+                game.display_alive_state(self.screen, obstacles, items)
+                game.display_death_state(self.screen, obstacles, items)
             pg.display.flip()
             clock.tick(FPS)
             
